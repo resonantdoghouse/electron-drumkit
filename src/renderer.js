@@ -36,7 +36,11 @@ import highHatOpenSound from "./assets/audio/505/hho.mp3";
 
 const $drumKit = document.getElementById("drumkit");
 const $reverbLevel = document.getElementById("reverb-level");
+const $filterLevel = document.getElementById("filter-level");
+
 let reverbLevel = 0;
+let filterLevel = 10000;
+
 // global volume, lowered due to added compression
 let vol = new Tone.Volume(-15);
 
@@ -52,8 +56,12 @@ const reverb3 = new Tone.Freeverb(0.8, 15000).receive("reverb").toMaster();
 $reverbLevel.addEventListener("input", () => {
   reverbLevel = $reverbLevel.value;
   // console.log(reverbLevel);
-  console.log(reverb1);
+  // console.log(reverb1);
   reverb1.roomSize.value = reverbLevel;
+});
+
+$filterLevel.addEventListener("input", () => {
+  reverb1.dampening.value = $filterLevel.value;
 });
 
 /*
@@ -70,7 +78,7 @@ let feedbackDelay = new Tone.PingPongDelay({
  */
 //some overall compression to keep the levels in check
 const masterCompressor = new Tone.Compressor({
-  threshold: -16,
+  threshold: -15,
   ratio: 12,
   attack: 0,
   release: 0.3
@@ -81,7 +89,7 @@ const lowBump = new Tone.Filter({
   type: "lowshelf",
   frequency: 90,
   Q: 1,
-  gain: 16
+  gain: 2
 });
 
 /*
