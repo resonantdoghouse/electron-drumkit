@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Electron Drumkit</title>
   </head>
   <body>
-    <h1>Electron Drumkit</h1>
-    <p>Sweet Cuppin Cakes!</p>
-    <div id="drumkit" class="drumkit">
+    <header>
+      <h1>Electron Drumkit</h1>
+      <p>Sweet Cuppin Cakes!</p>
+    </header>
 
-    </div>
+    <main>
+      <section id="drumkit" class="drumkit">
+        <div id="kick" class="drumpad">
+          Kick <span>"Space" or "A" Key</span>
+        </div>
+        <div id="snare" class="drumpad">Snare <span>"S" Key</span></div>
+        <div id="hi-hat" class="drumpad">Hi-hat <span>"G" Key</span></div>
+        <div id="hi-hat-open" class="drumpad">
+          Hi-hat Open <span>"H" Key</span>
+        </div>
+      </section>
 
-    <label for="reverb-level">Reverb Level</label>
-    <input id="reverb-level" type="range" min="0" max="0.8" step="0.1">
+      <section id="controls" class="controls">
+        <label for="reverb-level">Reverb Level</label>
+        <input id="reverb-level" type="range" min="0" max="0.8" step="0.1" />
 
-    <br>
+        <br />
 
-    <label for="filter-level">Filter Level</label>
-    <input id="filter-level" type="range" min="0" max="10000" step="1">
-
-
+        <label for="filter-level">Filter Level</label>
+        <input id="filter-level" type="range" min="0" max="10000" step="1" />
+      </section>
+    </main>
+    <footer>
+      drums drums drums
+    </footer>
   </body>
 </html>

@@ -9,6 +9,10 @@ import highHatOpenSound from "./assets/audio/505/hho.mp3";
 const $drumKit = document.getElementById("drumkit");
 const $reverbLevel = document.getElementById("reverb-level");
 const $filterLevel = document.getElementById("filter-level");
+const $kick = document.getElementById("kick");
+const $snare = document.getElementById("snare");
+const $hiHat = document.getElementById("hi-hat");
+const $hiHatOpen = document.getElementById("hi-hat-open");
 
 let reverbLevel = 0;
 let filterLevel = 10000;
@@ -34,6 +38,22 @@ $reverbLevel.addEventListener("input", () => {
 
 $filterLevel.addEventListener("input", () => {
   reverb1.dampening.value = $filterLevel.value;
+});
+
+$kick.addEventListener("click", () => {
+  drums505.triggerAttackRelease("C3", "4n");
+});
+
+$snare.addEventListener("click", () => {
+  drums505.triggerAttackRelease("D4", "4n");
+});
+
+$hiHat.addEventListener("click", () => {
+  drums505.triggerAttackRelease("G3", "4n");
+});
+
+$hiHatOpen.addEventListener("click", () => {
+  drums505.triggerAttackRelease("A3", "4n");
 });
 
 /*
@@ -87,7 +107,7 @@ document.addEventListener("keydown", e => {
   // console.log(e.keyCode);
   switch (e.keyCode) {
     case 65:
-      drums505.triggerAttackRelease("C3", "4n");
+      drums505.triggerAttackRelease("C3", "4n"); // kick
       break;
     case 32:
       drums505.triggerAttackRelease("C3", "4n");
