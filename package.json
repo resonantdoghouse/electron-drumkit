@@ -77,6 +77,8 @@
     "css-loader": "^3.0.0",
     "electron": "6.0.7",
     "node-loader": "^0.6.0",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "tone": "^13.8.25",
+    "url-loader": "^2.1.0"
   }
 }
